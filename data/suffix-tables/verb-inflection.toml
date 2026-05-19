@@ -1,0 +1,237 @@
+# Turkish verb inflectional suffixes
+# DSL keys match noun-inflection.toml schema.
+
+# ── Tense / aspect ────────────────────────────────────────────────────────────
+
+[[suffix]]
+label   = "Prog"
+class   = "VerbInflection"
+surface = "Iyor"
+forms   = ["iyor", "ıyor", "uyor", "üyor"]
+harmony = "Any"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "PastDef"
+class   = "VerbInflection"
+surface = "DI"
+forms   = ["di", "dı", "du", "dü", "ti", "tı", "tu", "tü"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "PastEv"
+class   = "VerbInflection"
+surface = "mIş"
+forms   = ["miş", "mış", "muş", "müş"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "AorPos"
+class   = "VerbInflection"
+surface = "Ir"
+forms   = ["er", "ar", "ir", "ır", "ur", "ür"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "AorNeg"
+class   = "VerbInflection"
+surface = "mAz"
+forms   = ["mez", "maz"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "Fut"
+class   = "VerbInflection"
+surface = "AcAk"
+forms   = ["acak", "ecek"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "Cond"
+class   = "VerbInflection"
+surface = "sA"
+forms   = ["sa", "se"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "Nec"
+class   = "VerbInflection"
+surface = "mAlI"
+forms   = ["malı", "meli"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+# ── Negation ──────────────────────────────────────────────────────────────────
+
+[[suffix]]
+label   = "Neg"
+class   = "VerbInflection"
+surface = "mA"
+forms   = ["me", "ma"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+# ── Non-finite forms ──────────────────────────────────────────────────────────
+
+[[suffix]]
+label   = "Inf"
+class   = "VerbInflection"
+surface = "mAk"
+forms   = ["mek", "mak"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "VerbNoun"
+class   = "VerbInflection"
+surface = "mA"
+forms   = ["me", "ma"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "PartFut"
+class   = "VerbInflection"
+surface = "AcAk"
+forms   = ["acak", "ecek"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "PartPast"
+class   = "VerbInflection"
+surface = "mIş"
+forms   = ["miş", "mış", "muş", "müş"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "GerDiv"
+class   = "VerbInflection"
+surface = "ArAk"
+forms   = ["arak", "erek"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "GerWhen"
+class   = "VerbInflection"
+surface = "IncA"
+forms   = ["ınca", "ince", "unca", "ünce"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "GerWhile"
+class   = "VerbInflection"
+surface = "IrkAn"
+forms   = ["ırken", "irken", "urken", "ürken", "arken", "erken"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+# ── Person / number endings (after tense) ─────────────────────────────────────
+
+[[suffix]]
+label   = "P1sg"
+class   = "VerbInflection"
+surface = "Im"
+forms   = ["yım", "yim", "yum", "yüm", "m"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "P2sg"
+class   = "VerbInflection"
+surface = "sIn"
+forms   = ["sin", "sın", "sun", "sün", "n"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "P1pl"
+class   = "VerbInflection"
+surface = "Iz"
+forms   = ["yız", "yiz", "yuz", "yüz", "k"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "P2pl"
+class   = "VerbInflection"
+surface = "sInIz"
+forms   = ["siniz", "sınız", "sunuz", "sünüz"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "P3pl"
+class   = "VerbInflection"
+surface = "lAr"
+forms   = ["lar", "ler"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+# ── Causative / passive / reflexive / reciprocal ─────────────────────────────
+
+[[suffix]]
+label   = "Caus"
+class   = "Derivational"
+surface = "DIr"
+forms   = ["dır", "dir", "dur", "dür", "tır", "tir", "tur", "tür"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "Pass"
+class   = "Derivational"
+surface = "Il"
+forms   = ["ıl", "il", "ul", "ül", "l"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "Refl"
+class   = "Derivational"
+surface = "In"
+forms   = ["ın", "in", "un", "ün"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "Recip"
+class   = "Derivational"
+surface = "Iş"
+forms   = ["ış", "iş", "uş", "üş"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1

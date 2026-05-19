@@ -1,0 +1,26 @@
+[package]
+name        = "oz-core"
+description = "Turkish morphological stemmer — Rust core engine"
+version.workspace    = true
+edition.workspace    = true
+authors.workspace    = true
+license.workspace    = true
+repository.workspace = true
+homepage.workspace   = true
+keywords.workspace   = true
+categories.workspace = true
+
+[features]
+default  = ["dict"]
+dict     = ["dep:oz-dict"]
+parallel = ["dep:rayon"]
+ml       = []            # activates oz-ml at the binary level; core only checks cfg
+
+[dependencies]
+oz-dict  = { workspace = true, optional = true }
+rayon    = { workspace = true, optional = true }
+serde    = { workspace = true, features = ["derive"] }
+thiserror = { workspace = true }
+
+[build-dependencies]
+# build.rs reads suffix-tables and emits FSM; no extra deps needed yet

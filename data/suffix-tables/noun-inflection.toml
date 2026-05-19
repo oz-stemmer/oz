@@ -1,0 +1,98 @@
+# Turkish noun inflectional suffixes
+# DSL keys:
+#   class   = suffix class (NounInflection | VerbInflection | NominalVerb | Derivational)
+#   surface = canonical form with harmony markers (A=a/e, I=ı/i/u/ü, U=u/ü, C=c/ç, D=d/t)
+#   forms   = all surface allomorphs (sorted longest-first)
+#   harmony = MatchBackness | MatchBacknessRounded | Any
+#   buffer  = None | Y | N | S
+#   min_stem_syllables = 1
+
+[[suffix]]
+label   = "Plural"
+class   = "NounInflection"
+surface = "lAr"
+forms   = ["lar", "ler"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "Acc"
+class   = "NounInflection"
+surface = "I"
+forms   = ["yı", "yi", "yu", "yü", "ı", "i", "u", "ü"]
+harmony = "MatchBackness"
+buffer  = "Y"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "Dat"
+class   = "NounInflection"
+surface = "A"
+forms   = ["ya", "ye", "a", "e"]
+harmony = "MatchBackness"
+buffer  = "Y"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "Loc"
+class   = "NounInflection"
+surface = "DA"
+forms   = ["ta", "te", "da", "de"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "Abl"
+class   = "NounInflection"
+surface = "DAn"
+forms   = ["tan", "ten", "dan", "den"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "Gen"
+class   = "NounInflection"
+surface = "nIn"
+forms   = ["nın", "nin", "nun", "nün", "ın", "in", "un", "ün"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "Ins"
+class   = "NounInflection"
+surface = "ylA"
+forms   = ["yla", "yle", "la", "le"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "Poss1sg"
+class   = "NounInflection"
+surface = "Im"
+forms   = ["ım", "im", "um", "üm"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "Poss2sg"
+class   = "NounInflection"
+surface = "In"
+forms   = ["ın", "in", "un", "ün"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "Poss3sg"
+class   = "NounInflection"
+surface = "sI"
+forms   = ["sı", "si", "su", "sü", "ı", "i", "u", "ü"]
+harmony = "MatchBackness"
+buffer  = "S"
+min_stem_syllables = 1

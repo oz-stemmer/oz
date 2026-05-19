@@ -1,0 +1,13 @@
+[package]
+name        = "oz-service"
+description = "axum HTTP + tonic gRPC microservice for Öz Turkish stemmer"
+version.workspace    = true
+edition.workspace    = true
+authors.workspace    = true
+license.workspace    = true
+repository.workspace = true
+
+[dependencies]
+oz-core = { workspace = true }
+serde   = { workspace = true }
+# axum and tonic will be added in Phase 5

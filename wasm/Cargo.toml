@@ -1,0 +1,15 @@
+[package]
+name        = "oz-wasm"
+description = "WASM binding for the Öz Turkish stemmer"
+version.workspace    = true
+edition.workspace    = true
+authors.workspace    = true
+license.workspace    = true
+repository.workspace = true
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+oz-core      = { workspace = true }
+# wasm-bindgen added in Phase 3

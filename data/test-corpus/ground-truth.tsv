@@ -1,0 +1,60 @@
+# word	expected_stem	source_or_note
+# Format: word<TAB>expected_stem<TAB>note
+# Lines starting with # are comments.
+
+# ── Plural ─────────────────────────────────────────────────────────────────────
+evler	ev	back-plural
+kitaplar	kitap	back-plural
+arabalar	araba	back-plural
+masalar	masa	back-plural
+elmalar	elma	back-plural
+defterleri	defter	front-plural+accusative
+çiçekler	çiçek	front-plural
+
+# ── Locative ───────────────────────────────────────────────────────────────────
+evde	ev	voiced-locative
+kitapta	kitap	devoiced-locative
+arabada	araba	voiced-locative
+masada	masa	voiced-locative
+
+# ── Ablative ───────────────────────────────────────────────────────────────────
+evden	ev	voiced-ablative
+kitaptan	kitap	devoiced-ablative
+arabadan	araba	voiced-ablative
+
+# ── Dative ─────────────────────────────────────────────────────────────────────
+eve	ev	dative
+kitaba	kitap	dative+consonant-mutation
+arabaya	araba	dative+buffer-y
+masaya	masa	dative+buffer-y
+
+# ── Possessive ─────────────────────────────────────────────────────────────────
+evim	ev	poss-1sg
+kitabım	kitap	poss-1sg+mutation
+arabam	araba	poss-1sg
+
+# ── Derivational ───────────────────────────────────────────────────────────────
+kitaplık	kitap	ness-suffix
+evlik	ev	ness-suffix
+arabacı	araba	agent-suffix
+kitapçı	kitap	agent-suffix
+evsiz	ev	without-suffix
+kitapsız	kitap	without-suffix
+evli	ev	with-suffix
+kitaplı	kitap	with-suffix
+
+# ── Consonant mutation ─────────────────────────────────────────────────────────
+ayağı	ayak	k→ğ polysyllabic
+kitabı	kitap	p→b accusative
+ağacı	ağaç	ç→c
+kanadı	kanat	t→d
+
+# ── Foreign borrowings (should NOT be over-stemmed) ────────────────────────────
+stres	stres	foreign-no-change
+lityum	lityum	foreign-no-change
+otobüs	otobüs	foreign-no-change
+
+# ── Proper nouns with apostrophe ───────────────────────────────────────────────
+# (apostrophe stripping handled at tokenization layer in v1.0)
+ankara	ankara	lowercased-proper
+istanbul	istanbul	lowercased-proper

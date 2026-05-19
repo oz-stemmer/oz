@@ -1,0 +1,12 @@
+[package]
+name        = "oz-dict"
+description = "Compiled FST dictionary validator for Öz Turkish stemmer"
+version.workspace    = true
+edition.workspace    = true
+authors.workspace    = true
+license.workspace    = true
+repository.workspace = true
+
+[dependencies]
+fst       = { workspace = true }
+thiserror = { workspace = true }

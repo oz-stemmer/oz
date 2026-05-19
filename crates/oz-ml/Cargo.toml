@@ -1,0 +1,12 @@
+[package]
+name        = "oz-ml"
+description = "Optional ONNX ML fallback for Öz Turkish stemmer (OOV words)"
+version.workspace    = true
+edition.workspace    = true
+authors.workspace    = true
+license.workspace    = true
+repository.workspace = true
+
+[dependencies]
+ort       = { workspace = true }
+thiserror = { workspace = true }

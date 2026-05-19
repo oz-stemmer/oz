@@ -1,0 +1,55 @@
+# Turkish derivational suffixes (noun→noun, noun→adjective, etc.)
+
+[[suffix]]
+label   = "Ness"
+class   = "Derivational"
+surface = "lIk"
+forms   = ["lık", "lik", "luk", "lük"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "With"
+class   = "Derivational"
+surface = "lI"
+forms   = ["lı", "li", "lu", "lü"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "Without"
+class   = "Derivational"
+surface = "sIz"
+forms   = ["sız", "siz", "suz", "süz"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "Dim"
+class   = "Derivational"
+surface = "CIk"
+forms   = ["cık", "cik", "cuk", "cük", "çık", "çik", "çuk", "çük"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "Agent"
+class   = "Derivational"
+surface = "CI"
+forms   = ["cı", "ci", "cu", "cü", "çı", "çi", "çu", "çü"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1
+
+[[suffix]]
+label   = "Adv"
+class   = "Derivational"
+surface = "CA"
+forms   = ["ca", "ce"]
+harmony = "MatchBackness"
+buffer  = "None"
+min_stem_syllables = 1

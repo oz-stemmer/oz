@@ -1,0 +1,15 @@
+[package]
+name        = "oz-cli"
+description = "CLI tool for the Öz Turkish stemmer"
+version.workspace    = true
+edition.workspace    = true
+authors.workspace    = true
+license.workspace    = true
+repository.workspace = true
+
+[[bin]]
+name = "oz"
+path = "src/main.rs"
+
+[dependencies]
+oz-core = { workspace = true }

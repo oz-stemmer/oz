@@ -51,6 +51,22 @@ pub fn devoice_final(c: char) -> Option<char> {
     }
 }
 
+/// Normalize a stripped stem to its citation form by devoicing the final consonant.
+/// b→p, c→ç, d→t, ğ→k — the reverse of `apply_final_mutation`.
+pub fn devoice_stem(stem: &str) -> String {
+    if stem.is_empty() {
+        return stem.to_owned();
+    }
+    let last_char = stem.chars().last().unwrap();
+    match devoice_final(last_char) {
+        Some(r) => {
+            let last_start = stem.char_indices().last().map(|(i, _)| i).unwrap_or(0);
+            format!("{}{}", &stem[..last_start], r)
+        }
+        None => stem.to_owned(),
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -79,5 +95,17 @@ mod tests {
     fn no_mutation_for_other_consonants() {
         assert_eq!(apply_final_mutation("ev"),   "ev");
         assert_eq!(apply_final_mutation("araba"),"araba");
+    }
+
+    #[test]
+    fn devoice_stem_basic() {
+        assert_eq!(devoice_stem("kitab"),  "kitap");
+        assert_eq!(devoice_stem("ağac"),   "ağaç");
+        assert_eq!(devoice_stem("kanad"),  "kanat");
+        assert_eq!(devoice_stem("ayağ"),   "ayak");
+        // Stems already in citation form are unchanged
+        assert_eq!(devoice_stem("kitap"),  "kitap");
+        assert_eq!(devoice_stem("gel"),    "gel");
+        assert_eq!(devoice_stem("ev"),     "ev");
     }
 }

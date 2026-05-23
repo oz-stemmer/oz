@@ -1,6 +1,6 @@
 use crate::{
     harmony::syllable_count,
-    mutation::apply_final_mutation,
+    mutation::devoice_stem,
     suffix::strip_one,
     types::{MorphAnalysis, StemmerConfig, Suffix},
 };
@@ -70,11 +70,11 @@ impl Stemmer {
             }
         }
 
-        // Apply consonant mutation to the final candidate stem.
-        // Only apply when at least one suffix was stripped (otherwise we'd mutate
-        // bare words like "kitap" → "kitab" when used standalone, which is wrong).
+        // Normalize the stripped stem to citation form: devoice the final consonant
+        // (b→p, c→ç, d→t, ğ→k) so all surface variants of the same lemma collapse
+        // to the same key.  E.g. "kitabı" → strip "ı" → "kitab" → devoice → "kitap".
         let stem = if !stripped.is_empty() {
-            apply_final_mutation(&current)
+            devoice_stem(&current)
         } else {
             current.clone()
         };
@@ -154,12 +154,12 @@ mod tests {
 
     #[test]
     fn stem_with_mutation() {
-        // "kitabı" → strip accusative "ı" → "kitab" is the mutated form
-        // (kitap final p → b before vowel-initial suffix)
-        // Our approach: strip suffix → apply mutation to remaining stem
-        let s = stemmer().stem("kitabı");
-        // The FSM strips "ı" (accusative), leaving "kitab"; mutation is already surface form
-        assert_eq!(s, "kitab"); // surface stem after mutation
+        // After stripping the suffix, devoice_stem normalises to the citation form.
+        // "kitabı" → strip "ı" → "kitab" → devoice b→p → "kitap"
+        assert_eq!(stemmer().stem("kitabı"),  "kitap");
+        assert_eq!(stemmer().stem("ayağı"),   "ayak");
+        assert_eq!(stemmer().stem("ağacı"),   "ağaç");
+        assert_eq!(stemmer().stem("kanadı"),  "kanat");
     }
 
     #[test]

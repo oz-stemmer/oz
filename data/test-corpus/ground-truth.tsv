@@ -1,60 +1,318 @@
-# word	expected_stem	source_or_note
-# Format: word<TAB>expected_stem<TAB>note
+# Öz ground-truth stemming corpus
+# Format: word<TAB>expected_stem<TAB>source_or_note
 # Lines starting with # are comments.
+# Sources: ITU-NLP, Snowball-TR, Zemberek-eval, manual
 
-# ── Plural ─────────────────────────────────────────────────────────────────────
-evler	ev	back-plural
-kitaplar	kitap	back-plural
-arabalar	araba	back-plural
-masalar	masa	back-plural
-elmalar	elma	back-plural
-defterleri	defter	front-plural+accusative
-çiçekler	çiçek	front-plural
+# ════════════════════════════════════════════════════════════
+# NOUN INFLECTION — Plural
+# ════════════════════════════════════════════════════════════
+evler	ev	plural-front
+kitaplar	kitap	plural-back
+arabalar	araba	plural-back
+elmalar	elma	plural-back
+çiçekler	çiçek	plural-front
+masalar	masa	plural-back
+defterler	defter	plural-front
+kapılar	kapı	plural-back
+gözler	göz	plural-front-rounded
+kollar	kol	plural-back-rounded
+dişler	diş	plural-front
+sözler	söz	plural-front-rounded
+yollar	yol	plural-back-rounded
+sular	su	plural-back-rounded
+güller	gül	plural-front-rounded
+dağlar	dağ	plural-back
+eller	el	plural-front
+eller	el	plural-front
+deriler	deri	plural-front
+çocuklar	çocuk	plural-back-rounded
 
-# ── Locative ───────────────────────────────────────────────────────────────────
-evde	ev	voiced-locative
-kitapta	kitap	devoiced-locative
-arabada	araba	voiced-locative
-masada	masa	voiced-locative
+# ════════════════════════════════════════════════════════════
+# NOUN INFLECTION — Dative
+# ════════════════════════════════════════════════════════════
+eve	ev	dative-front
+kitaba	kitap	dative-back+mutation
+arabaya	araba	dative-back+buffer-y
+masaya	masa	dative-back+buffer-y
+okula	okul	dative-back
+şehre	şehir	dative-front+vowel-drop
+köye	köy	dative-front+buffer-y
+dağa	dağ	dative-back
+göle	göl	dative-front-rounded
+suya	su	dative-back+buffer-y
 
-# ── Ablative ───────────────────────────────────────────────────────────────────
-evden	ev	voiced-ablative
-kitaptan	kitap	devoiced-ablative
-arabadan	araba	voiced-ablative
+# ════════════════════════════════════════════════════════════
+# NOUN INFLECTION — Locative
+# ════════════════════════════════════════════════════════════
+evde	ev	locative-voiced
+kitapta	kitap	locative-devoiced
+arabada	araba	locative-voiced
+masada	masa	locative-voiced
+okulda	okul	locative-voiced
+şehirde	şehir	locative-voiced
+köyde	köy	locative-voiced
+dağda	dağ	locative-voiced
+gölde	göl	locative-voiced
+suda	su	locative-voiced
+cepte	cep	locative-devoiced+mutation
+kafede	kafe	locative-voiced
 
-# ── Dative ─────────────────────────────────────────────────────────────────────
-eve	ev	dative
-kitaba	kitap	dative+consonant-mutation
-arabaya	araba	dative+buffer-y
-masaya	masa	dative+buffer-y
+# ════════════════════════════════════════════════════════════
+# NOUN INFLECTION — Ablative
+# ════════════════════════════════════════════════════════════
+evden	ev	ablative-voiced
+kitaptan	kitap	ablative-devoiced
+arabadan	araba	ablative-voiced
+masadan	masa	ablative-voiced
+okuldan	okul	ablative-voiced
+şehirden	şehir	ablative-voiced
+köyden	köy	ablative-voiced
+dağdan	dağ	ablative-voiced
+gölden	göl	ablative-voiced
+sudan	su	ablative-voiced
 
-# ── Possessive ─────────────────────────────────────────────────────────────────
-evim	ev	poss-1sg
-kitabım	kitap	poss-1sg+mutation
-arabam	araba	poss-1sg
+# ════════════════════════════════════════════════════════════
+# NOUN INFLECTION — Accusative
+# ════════════════════════════════════════════════════════════
+evi	ev	accusative-front
+kitabı	kitap	accusative-back+mutation
+arabayı	araba	accusative-back+buffer-y
+masayı	masa	accusative-back+buffer-y
+okulu	okul	accusative-back-rounded
+şehri	şehir	accusative-front+vowel-drop
+köyü	köy	accusative-front-rounded+buffer-y
+dağı	dağ	accusative-back
+gölü	göl	accusative-front-rounded
+suyu	su	accusative-back-rounded+buffer-y
 
-# ── Derivational ───────────────────────────────────────────────────────────────
+# ════════════════════════════════════════════════════════════
+# NOUN INFLECTION — Genitive
+# ════════════════════════════════════════════════════════════
+evin	ev	genitive-front
+kitabın	kitap	genitive-back+mutation
+arabanın	araba	genitive-back
+masanın	masa	genitive-back
+okulun	okul	genitive-back-rounded
+şehrin	şehir	genitive-front
+köyün	köy	genitive-front-rounded
+dağın	dağ	genitive-back
+
+# ════════════════════════════════════════════════════════════
+# NOUN INFLECTION — Possessives
+# ════════════════════════════════════════════════════════════
+evim	ev	poss-1sg-front
+kitabım	kitap	poss-1sg-back+mutation
+evlerin	ev	poss-2sg-front (gen-like)
+arabam	araba	poss-1sg-back
+arabası	araba	poss-3sg-back+buffer-s
+evi	ev	poss-3sg-front
+kitabı	kitap	poss-3sg-back+mutation
+evimiz	ev	poss-1pl-front
+eviniz	ev	poss-2pl-front
+evleri	ev	poss-3pl-front
+
+# ════════════════════════════════════════════════════════════
+# DERIVATIONAL — Noun→Noun / Noun→Adjective
+# ════════════════════════════════════════════════════════════
 kitaplık	kitap	ness-suffix
 evlik	ev	ness-suffix
+doktorluk	doktor	ness-suffix
+öğretmenlik	öğretmen	ness-suffix
 arabacı	araba	agent-suffix
-kitapçı	kitap	agent-suffix
+kitapçı	kitap	agent-suffix+mutation
+demirci	demir	agent-suffix
+ekmekçi	ekmek	agent-suffix
 evsiz	ev	without-suffix
 kitapsız	kitap	without-suffix
+susuz	su	without-suffix-rounded
 evli	ev	with-suffix
 kitaplı	kitap	with-suffix
+sulu	su	with-suffix-rounded
+güllü	gül	with-suffix-front-rounded
+evcik	ev	diminutive-front
+kitapçık	kitap	diminutive-back+mutation
+arabaca	araba	adverbial
+insanca	insan	adverbial
 
-# ── Consonant mutation ─────────────────────────────────────────────────────────
-ayağı	ayak	k→ğ polysyllabic
+# ════════════════════════════════════════════════════════════
+# CONSONANT MUTATION
+# ════════════════════════════════════════════════════════════
+ayağı	ayak	k→ğ polysyllabic accusative
+ayağa	ayak	k→ğ polysyllabic dative
+ayağın	ayak	k→ğ polysyllabic genitive
 kitabı	kitap	p→b accusative
-ağacı	ağaç	ç→c
-kanadı	kanat	t→d
+kitaba	kitap	p→b dative
+ağacı	ağaç	ç→c accusative
+ağaca	ağaç	ç→c dative
+kanadı	kanat	t→d accusative
+kanada	kanat	t→d dative
+çocuğu	çocuk	k→ğ polysyllabic accusative
+çocuğa	çocuk	k→ğ polysyllabic dative
+ilacı	ilaç	ç→c accusative
+rengi	renk	k→g monosyllabic-exception accusative
+ödevi	ödev	v-final no-mutation accusative
 
-# ── Foreign borrowings (should NOT be over-stemmed) ────────────────────────────
+# ════════════════════════════════════════════════════════════
+# VERB — Progressive (-iyor)
+# ════════════════════════════════════════════════════════════
+geliyor	gel	prog-front
+gidiyor	git	prog-front+stem-mutation (d→t before -iyor)
+bakıyor	bak	prog-back
+koşuyor	koş	prog-back-rounded
+görüyor	gör	prog-front-rounded
+okuyor	oku	prog-back-rounded
+söylüyor	söyle	prog-front-rounded
+anlatıyor	anlat	prog-back
+çalışıyor	çalış	prog-back
+bekliyor	bekle	prog-front
+
+# ════════════════════════════════════════════════════════════
+# VERB — Definite Past (-dı)
+# ════════════════════════════════════════════════════════════
+geldi	gel	past-voiced-front
+baktı	bak	past-devoiced-back
+gördü	gör	past-voiced-front-rounded
+okudu	oku	past-voiced-back-rounded
+söyledi	söyle	past-voiced-front
+anlattı	anlat	past-devoiced-back
+çalıştı	çalış	past-devoiced-back
+koştu	koş	past-devoiced-back-rounded
+yaptı	yap	past-devoiced-back
+gitti	git	past-double-consonant
+
+# ════════════════════════════════════════════════════════════
+# VERB — Evidential Past (-miş)
+# ════════════════════════════════════════════════════════════
+gelmiş	gel	evid-past-front
+bakmış	bak	evid-past-back
+görmüş	gör	evid-past-front-rounded
+okumuş	oku	evid-past-back-rounded
+söylemiş	söyle	evid-past-front
+yapmış	yap	evid-past-back
+
+# ════════════════════════════════════════════════════════════
+# VERB — Future (-acak)
+# ════════════════════════════════════════════════════════════
+gelecek	gel	future-front
+bakacak	bak	future-back
+görecek	gör	future-front-rounded
+okuyacak	oku	future-back-rounded+buffer-y
+söyleyecek	söyle	future-front+buffer-y
+yapacak	yap	future-back
+gidecek	git	future-front+stem-change
+
+# ════════════════════════════════════════════════════════════
+# VERB — Infinitive (-mek)
+# ════════════════════════════════════════════════════════════
+gelmek	gel	infinitive-front
+bakmak	bak	infinitive-back
+görmek	gör	infinitive-front-rounded
+okumak	oku	infinitive-back-rounded
+söylemek	söyle	infinitive-front
+yapmak	yap	infinitive-back
+
+# ════════════════════════════════════════════════════════════
+# VERB — Necessitative (-malı)
+# ════════════════════════════════════════════════════════════
+gelmeli	gel	nec-front
+bakmalı	bak	nec-back
+görmeli	gör	nec-front-rounded
+okumalı	oku	nec-back-rounded
+yapmalı	yap	nec-back
+
+# ════════════════════════════════════════════════════════════
+# VERB — Gerunds
+# ════════════════════════════════════════════════════════════
+gelerek	gel	gerund-arak-front
+bakarak	bak	gerund-arak-back
+gelince	gel	gerund-inca-front
+bakınca	bak	gerund-inca-back
+gelirken	gel	gerund-irken-front
+bakarken	bak	gerund-irken-back
+
+# ════════════════════════════════════════════════════════════
+# VERB — Causative / Passive / Voice
+# ════════════════════════════════════════════════════════════
+yaptır	yap	causative-back
+gördür	gör	causative-front-rounded
+okut	oku	causative-short-back
+yapıl	yap	passive-back
+görül	gör	passive-front-rounded
+yazıcı	yaz	verb-agent-back
+okuyucu	oku	verb-agent-back-rounded+buffer-y
+
+# ════════════════════════════════════════════════════════════
+# VERB — Aorist
+# ════════════════════════════════════════════════════════════
+gelir	gel	aorist-front
+bakar	bak	aorist-back
+görür	gör	aorist-front-rounded
+okur	oku	aorist-back-rounded
+yapar	yap	aorist-back
+gitmez	git	aorist-neg-front
+bakmaz	bak	aorist-neg-back
+
+# ════════════════════════════════════════════════════════════
+# FOREIGN BORROWINGS — must NOT be over-stemmed
+# ════════════════════════════════════════════════════════════
 stres	stres	foreign-no-change
 lityum	lityum	foreign-no-change
 otobüs	otobüs	foreign-no-change
+kanepe	kanepe	foreign-no-change
+komite	komite	foreign-no-change
+kalite	kalite	foreign-no-change
+trafik	trafik	foreign-no-change
+market	market	foreign-no-change
+vitamin	vitamin	foreign-no-change
+protein	protein	foreign-no-change
+sistem	sistem	foreign-no-change
+müzik	müzik	foreign-no-change
+teknik	teknik	foreign-no-change
+plastik	plastik	foreign-no-change
+klasik	klasik	foreign-no-change
 
-# ── Proper nouns with apostrophe ───────────────────────────────────────────────
-# (apostrophe stripping handled at tokenization layer in v1.0)
-ankara	ankara	lowercased-proper
-istanbul	istanbul	lowercased-proper
+# ════════════════════════════════════════════════════════════
+# PROPER NOUNS (lowercased, no apostrophe in v1.0)
+# ════════════════════════════════════════════════════════════
+ankara	ankara	proper-no-change
+istanbul	istanbul	proper-no-change
+türkiye	türkiye	proper-no-change
+mehmet	mehmet	proper-no-change
+ayşe	ayşe	proper-no-change
+
+# ════════════════════════════════════════════════════════════
+# EDGE CASES — single-syllable stop rule
+# ════════════════════════════════════════════════════════════
+el	el	single-syllable-no-strip
+at	at	single-syllable-no-strip
+iş	iş	single-syllable-no-strip
+göz	göz	single-syllable-no-strip
+kol	kol	single-syllable-no-strip
+yol	yol	single-syllable-no-strip
+baş	baş	single-syllable-no-strip
+taş	taş	single-syllable-no-strip
+
+# ════════════════════════════════════════════════════════════
+# COMPOUND NOUNS — preserve as stem in v1.0
+# ════════════════════════════════════════════════════════════
+başkent	başkent	compound-no-decompose
+hanımeli	hanımeli	compound-no-decompose
+ayakkabı	ayakkabı	compound-no-decompose
+gecekondu	gecekondu	compound-no-decompose
+
+# ════════════════════════════════════════════════════════════
+# NUMBERS WITH SUFFIXES
+# ════════════════════════════════════════════════════════════
+birinci	bir	ordinal-suffix
+ikinci	iki	ordinal-suffix
+üçüncü	üç	ordinal-suffix-rounded
+
+# ════════════════════════════════════════════════════════════
+# INFORMAL / SOCIAL MEDIA (after ASCII normalization)
+# ════════════════════════════════════════════════════════════
+gidiyorum	git	informal-1sg-prog
+geliyorum	gel	informal-1sg-prog
+yapıyorum	yap	informal-1sg-prog
+bilmiyorum	bil	informal-1sg-neg-prog
+seviyorum	sev	informal-1sg-prog
+istiyorum	iste	informal-1sg-prog

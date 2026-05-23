@@ -203,17 +203,7 @@ pub static SUFFIX_TABLE: &[SuffixDef] = &[
         min_stem_syllables: 1,
     },
 
-    // ── Verb: aorist (positive) ───────────────────────────────────────────────
-    SuffixDef {
-        label: "Aor",
-        class: SuffixClass::VerbInflection,
-        harmony: HarmonyReq::MatchBackness,
-        buffer: Buffer::None,
-        forms: &["er", "ar", "ir", "ır", "ur", "ür"],
-        min_stem_syllables: 1,
-    },
-
-    // ── Verb: progressive -iyor ───────────────────────────────────────────────
+    // ── Verb: progressive -iyor ──────────────────────────────────────────────
     SuffixDef {
         label: "Prog",
         class: SuffixClass::VerbInflection,
@@ -223,13 +213,73 @@ pub static SUFFIX_TABLE: &[SuffixDef] = &[
         min_stem_syllables: 1,
     },
 
-    // ── Verb: past -dı ────────────────────────────────────────────────────────
+    // ── Verb: definite past -dı ───────────────────────────────────────────────
     SuffixDef {
         label: "PastDef",
         class: SuffixClass::VerbInflection,
         harmony: HarmonyReq::MatchBackness,
         buffer: Buffer::None,
         forms: &["di", "dı", "du", "dü", "ti", "tı", "tu", "tü"],
+        min_stem_syllables: 1,
+    },
+
+    // ── Verb: evidential past -miş ────────────────────────────────────────────
+    SuffixDef {
+        label: "PastEv",
+        class: SuffixClass::VerbInflection,
+        harmony: HarmonyReq::MatchBackness,
+        buffer: Buffer::None,
+        forms: &["miş", "mış", "muş", "müş"],
+        min_stem_syllables: 1,
+    },
+
+    // ── Verb: aorist (positive) ───────────────────────────────────────────────
+    SuffixDef {
+        label: "AorPos",
+        class: SuffixClass::VerbInflection,
+        harmony: HarmonyReq::MatchBackness,
+        buffer: Buffer::None,
+        forms: &["er", "ar", "ir", "ır", "ur", "ür"],
+        min_stem_syllables: 1,
+    },
+
+    // ── Verb: aorist negative -maz ────────────────────────────────────────────
+    SuffixDef {
+        label: "AorNeg",
+        class: SuffixClass::VerbInflection,
+        harmony: HarmonyReq::MatchBackness,
+        buffer: Buffer::None,
+        forms: &["mez", "maz"],
+        min_stem_syllables: 1,
+    },
+
+    // ── Verb: future -acak ────────────────────────────────────────────────────
+    SuffixDef {
+        label: "Fut",
+        class: SuffixClass::VerbInflection,
+        harmony: HarmonyReq::MatchBackness,
+        buffer: Buffer::None,
+        forms: &["acak", "ecek"],
+        min_stem_syllables: 1,
+    },
+
+    // ── Verb: conditional -sa ─────────────────────────────────────────────────
+    SuffixDef {
+        label: "Cond",
+        class: SuffixClass::VerbInflection,
+        harmony: HarmonyReq::MatchBackness,
+        buffer: Buffer::None,
+        forms: &["sa", "se"],
+        min_stem_syllables: 1,
+    },
+
+    // ── Verb: necessitative -malı ────────────────────────────────────────────
+    SuffixDef {
+        label: "Nec",
+        class: SuffixClass::VerbInflection,
+        harmony: HarmonyReq::MatchBackness,
+        buffer: Buffer::None,
+        forms: &["malı", "meli"],
         min_stem_syllables: 1,
     },
 
@@ -253,13 +303,67 @@ pub static SUFFIX_TABLE: &[SuffixDef] = &[
         min_stem_syllables: 1,
     },
 
-    // ── Verb: person endings (1sg -m, 2sg -n, 1pl -k, 2pl -nız etc.) ─────────
+    // ── Verb: gerund -arak ────────────────────────────────────────────────────
+    SuffixDef {
+        label: "GerDiv",
+        class: SuffixClass::VerbInflection,
+        harmony: HarmonyReq::MatchBackness,
+        buffer: Buffer::None,
+        forms: &["arak", "erek"],
+        min_stem_syllables: 1,
+    },
+
+    // ── Verb: gerund -ınca ────────────────────────────────────────────────────
+    SuffixDef {
+        label: "GerWhen",
+        class: SuffixClass::VerbInflection,
+        harmony: HarmonyReq::MatchBackness,
+        buffer: Buffer::None,
+        forms: &["ınca", "ince", "unca", "ünce"],
+        min_stem_syllables: 1,
+    },
+
+    // ── Verb: gerund -ırken ───────────────────────────────────────────────────
+    SuffixDef {
+        label: "GerWhile",
+        class: SuffixClass::VerbInflection,
+        harmony: HarmonyReq::MatchBackness,
+        buffer: Buffer::None,
+        forms: &["ırken", "irken", "urken", "ürken", "arken", "erken"],
+        min_stem_syllables: 1,
+    },
+
+    // ── Verb person endings ───────────────────────────────────────────────────
     SuffixDef {
         label: "P1sg",
         class: SuffixClass::VerbInflection,
-        harmony: HarmonyReq::Any,
+        harmony: HarmonyReq::MatchBackness,
         buffer: Buffer::None,
-        forms: &["yim", "yım"],
+        forms: &["yım", "yim", "yum", "yüm", "m"],
+        min_stem_syllables: 1,
+    },
+    SuffixDef {
+        label: "P2sg",
+        class: SuffixClass::VerbInflection,
+        harmony: HarmonyReq::MatchBackness,
+        buffer: Buffer::None,
+        forms: &["sin", "sın", "sun", "sün", "n"],
+        min_stem_syllables: 1,
+    },
+    SuffixDef {
+        label: "P1pl",
+        class: SuffixClass::VerbInflection,
+        harmony: HarmonyReq::MatchBackness,
+        buffer: Buffer::None,
+        forms: &["yız", "yiz", "yuz", "yüz", "k"],
+        min_stem_syllables: 1,
+    },
+    SuffixDef {
+        label: "P2pl",
+        class: SuffixClass::VerbInflection,
+        harmony: HarmonyReq::MatchBackness,
+        buffer: Buffer::None,
+        forms: &["siniz", "sınız", "sunuz", "sünüz"],
         min_stem_syllables: 1,
     },
     SuffixDef {
@@ -270,6 +374,56 @@ pub static SUFFIX_TABLE: &[SuffixDef] = &[
         forms: &["ler", "lar"],
         min_stem_syllables: 1,
     },
+
+    // ── Verb derivational: causative -dır ────────────────────────────────────
+    SuffixDef {
+        label: "Caus",
+        class: SuffixClass::Derivational,
+        harmony: HarmonyReq::MatchBackness,
+        buffer: Buffer::None,
+        forms: &["dır", "dir", "dur", "dür", "tır", "tir", "tur", "tür"],
+        min_stem_syllables: 1,
+    },
+
+    // ── Verb derivational: passive -il ───────────────────────────────────────
+    SuffixDef {
+        label: "Pass",
+        class: SuffixClass::Derivational,
+        harmony: HarmonyReq::MatchBackness,
+        buffer: Buffer::None,
+        forms: &["ıl", "il", "ul", "ül"],
+        min_stem_syllables: 1,
+    },
+
+    // ── Verb derivational: reflexive -in ─────────────────────────────────────
+    SuffixDef {
+        label: "Refl",
+        class: SuffixClass::Derivational,
+        harmony: HarmonyReq::MatchBackness,
+        buffer: Buffer::None,
+        forms: &["ın", "in", "un", "ün"],
+        min_stem_syllables: 1,
+    },
+
+    // ── Verb derivational: reciprocal -iş ────────────────────────────────────
+    SuffixDef {
+        label: "Recip",
+        class: SuffixClass::Derivational,
+        harmony: HarmonyReq::MatchBackness,
+        buffer: Buffer::None,
+        forms: &["ış", "iş", "uş", "üş"],
+        min_stem_syllables: 1,
+    },
+
+    // ── Verb: agent noun -ıcı ─────────────────────────────────────────────────
+    SuffixDef {
+        label: "VerbAgent",
+        class: SuffixClass::Derivational,
+        harmony: HarmonyReq::MatchBackness,
+        buffer: Buffer::None,
+        forms: &["ıcı", "ici", "ucu", "ücü"],
+        min_stem_syllables: 1,
+    },
 ];
 
 /// Try to strip one suffix layer from `word`.
@@ -277,10 +431,6 @@ pub static SUFFIX_TABLE: &[SuffixDef] = &[
 /// Returns `Some((candidate_stem, suffix_label))` for the longest matching
 /// suffix that satisfies harmony, or `None` if no suffix applies.
 pub fn strip_one(word: &str, aggressive: bool) -> Option<(String, &'static str)> {
-    let word_vowels = crate::harmony::syllable_count(word);
-
-    // Sort by form length descending so we always try longest match first.
-    // We collect candidates sorted by form length.
     let mut best: Option<(String, &'static str, usize)> = None; // (stem, label, form_len)
 
     'outer: for def in SUFFIX_TABLE {
@@ -378,12 +528,90 @@ mod tests {
 
     #[test]
     fn no_strip_on_single_vowel_word() {
-        // "el" (hand) — stripping anything would leave empty or sub-minimal stem
         let result = strip_one("el", false);
-        // Might strip nothing meaningful; if it does, stem must be non-empty
         if let Some((stem, _)) = result {
             assert!(!stem.is_empty());
             assert!(crate::harmony::syllable_count(&stem) >= 1);
         }
+    }
+
+    // ── Verb tense tests ──────────────────────────────────────────────────────
+
+    #[test]
+    fn strip_progressive() {
+        let (stem, label) = strip_one("gidiyor", false).unwrap();
+        assert_eq!(stem, "gid");
+        assert_eq!(label, "Prog");
+    }
+
+    #[test]
+    fn strip_past_definite() {
+        let (stem, label) = strip_one("gitti", false).unwrap();
+        // "gitti" ends with "ti" (devoiced -di after t-final stem)
+        assert_eq!(label, "PastDef");
+        assert!(!stem.is_empty());
+    }
+
+    #[test]
+    fn strip_evidential_past() {
+        let (stem, label) = strip_one("gelmiş", false).unwrap();
+        assert_eq!(stem, "gel");
+        assert_eq!(label, "PastEv");
+    }
+
+    #[test]
+    fn strip_future() {
+        let (stem, label) = strip_one("gelecek", false).unwrap();
+        assert_eq!(stem, "gel");
+        assert_eq!(label, "Fut");
+    }
+
+    #[test]
+    fn strip_infinitive() {
+        let (stem, label) = strip_one("gelmek", false).unwrap();
+        assert_eq!(stem, "gel");
+        assert_eq!(label, "Inf");
+    }
+
+    #[test]
+    fn strip_necessitative() {
+        let (stem, label) = strip_one("gelmeli", false).unwrap();
+        assert_eq!(stem, "gel");
+        assert_eq!(label, "Nec");
+    }
+
+    #[test]
+    fn strip_gerund_arak() {
+        let (stem, label) = strip_one("gelerek", false).unwrap();
+        assert_eq!(stem, "gel");
+        assert_eq!(label, "GerDiv");
+    }
+
+    #[test]
+    fn strip_causative() {
+        let (stem, label) = strip_one("yaptır", false).unwrap();
+        assert_eq!(stem, "yap");
+        assert_eq!(label, "Caus");
+    }
+
+    #[test]
+    fn strip_passive() {
+        let (stem, label) = strip_one("yapıl", false).unwrap();
+        assert_eq!(stem, "yap");
+        assert_eq!(label, "Pass");
+    }
+
+    #[test]
+    fn strip_agent_noun() {
+        let (stem, label) = strip_one("yazıcı", false).unwrap();
+        assert_eq!(stem, "yaz");
+        assert_eq!(label, "VerbAgent");
+    }
+
+    #[test]
+    fn strip_p2pl() {
+        let (stem, label) = strip_one("geliyorsunuz", false).unwrap();
+        assert_eq!(label, "P2pl");
+        assert!(!stem.is_empty());
     }
 }

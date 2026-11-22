@@ -1,0 +1,56 @@
+name: Node bindings
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "bindings/node/**"
+      - "crates/oz-core/**"
+      - "Cargo.toml"
+      - ".github/workflows/node.yml"
+  pull_request:
+    paths:
+      - "bindings/node/**"
+      - "crates/oz-core/**"
+      - "Cargo.toml"
+      - ".github/workflows/node.yml"
+
+env:
+  CARGO_TERM_COLOR: always
+  RUST_BACKTRACE: 1
+
+jobs:
+  test:
+    name: Node ${{ matrix.node }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        node: ["18", "20", "22"]
+
+    defaults:
+      run:
+        working-directory: bindings/node
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: "."
+
+      - name: Install npm deps
+        run: npm ci || npm install
+
+      - name: Build native binding
+        run: npm run build
+
+      - name: Run tests
+        run: npm test

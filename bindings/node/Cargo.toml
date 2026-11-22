@@ -1,0 +1,19 @@
+[package]
+name        = "oz-stemmer-node"
+description = "Node.js bindings for the Öz Turkish stemmer (napi-rs)"
+version.workspace    = true
+edition.workspace    = true
+authors.workspace    = true
+license.workspace    = true
+repository.workspace = true
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+oz-core    = { workspace = true }
+napi       = { version = "2", default-features = false, features = ["napi4"] }
+napi-derive = "2"
+
+[build-dependencies]
+napi-build = "2"

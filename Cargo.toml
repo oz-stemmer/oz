@@ -27,7 +27,7 @@ rayon    = "1.10"
 serde    = { version = "1", features = ["derive"] }
 thiserror = "2"
 fst      = "0.4"
-ort      = { version = "2", default-features = false, features = ["copy-dylibs"] }
+ort      = { version = "=2.0.0-rc.10", default-features = false, features = ["copy-dylibs"] }
 
 [profile.release]
 lto           = "fat"

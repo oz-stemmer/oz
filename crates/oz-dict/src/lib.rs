@@ -1,4 +1,4 @@
-use fst::{Set, IntoStreamer, Streamer};
+use fst::Set;
 use thiserror::Error;
 
 #[derive(Debug, Error)]
@@ -28,9 +28,9 @@ impl DictValidator {
     {
         let mut builder = fst::SetBuilder::memory();
         for w in words {
-            builder.insert(w).map_err(|e| DictError::Fst(fst::Error::Fst(e)))?;
+            builder.insert(w)?;
         }
-        Ok(builder.into_inner().map_err(|e| DictError::Fst(fst::Error::Fst(e)))?)
+        Ok(builder.into_inner()?)
     }
 
     /// Returns `true` if `word` is present in the dictionary.
@@ -53,8 +53,8 @@ mod tests {
     #[test]
     fn contains_inserted_word() {
         let d = build(&["araba", "ev", "kitap"]);
-        assert!( d.contains("araba"));
-        assert!( d.contains("ev"));
+        assert!(d.contains("araba"));
+        assert!(d.contains("ev"));
         assert!(!d.contains("xyz"));
     }
 

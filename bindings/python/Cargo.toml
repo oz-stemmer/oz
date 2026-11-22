@@ -1,0 +1,16 @@
+[package]
+name        = "oz-stemmer-py"
+description = "Python bindings for the Öz Turkish stemmer"
+version.workspace    = true
+edition.workspace    = true
+authors.workspace    = true
+license.workspace    = true
+repository.workspace = true
+
+[lib]
+name       = "_oz_stemmer"
+crate-type = ["cdylib"]
+
+[dependencies]
+oz-core = { workspace = true }
+pyo3    = { version = "0.22", features = ["extension-module", "abi3-py38"] }

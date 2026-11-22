@@ -3,6 +3,9 @@ dist/
 *.onnx
 *.fst
 node_modules/
+# napi-rs build artifacts
+bindings/node/*.node
+bindings/node/package-lock.json
 __pycache__/
 *.pyc
 .env

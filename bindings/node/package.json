@@ -1,0 +1,52 @@
+{
+  "name": "@oz/stemmer",
+  "version": "0.1.0",
+  "description": "Modern production-grade Turkish stemmer — Rust core, native Node.js binary",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oz-stemmer/oz.git",
+    "directory": "bindings/node"
+  },
+  "homepage": "https://github.com/oz-stemmer/oz",
+  "bugs": {
+    "url": "https://github.com/oz-stemmer/oz/issues"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "turkish",
+    "nlp",
+    "stemmer",
+    "morphology",
+    "text",
+    "native",
+    "napi"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "napi": {
+    "name": "oz-stemmer",
+    "triples": {
+      "defaults": true,
+      "additional": [
+        "aarch64-apple-darwin",
+        "aarch64-unknown-linux-gnu",
+        "x86_64-pc-windows-msvc"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "napi build --platform --release",
+    "build:debug": "napi build --platform",
+    "test": "node --test __test__/*.test.mjs"
+  },
+  "devDependencies": {
+    "@napi-rs/cli": "^2.18.0"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ]
+}

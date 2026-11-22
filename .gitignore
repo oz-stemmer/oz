@@ -1,5 +1,7 @@
 target/
 dist/
+# wasm-pack output
+wasm/pkg/
 *.onnx
 *.fst
 node_modules/

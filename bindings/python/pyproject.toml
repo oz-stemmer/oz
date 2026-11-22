@@ -1,0 +1,41 @@
+[build-system]
+requires      = ["maturin>=1.6,<2.0"]
+build-backend = "maturin"
+
+[project]
+name            = "oz-stemmer"
+description     = "Modern production-grade Turkish stemmer — Rust core, Python wheel"
+requires-python = ">=3.8"
+license         = { text = "Apache-2.0" }
+authors         = [{ name = "Öz Contributors" }]
+readme          = "README.md"
+keywords        = ["turkish", "nlp", "stemmer", "morphology", "text"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Natural Language :: Turkish",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Rust",
+    "Topic :: Text Processing :: Linguistic",
+]
+dynamic = ["version"]
+
+[project.urls]
+Homepage   = "https://github.com/oz-stemmer/oz"
+Repository = "https://github.com/oz-stemmer/oz"
+Issues     = "https://github.com/oz-stemmer/oz/issues"
+
+[tool.maturin]
+manifest-path  = "Cargo.toml"
+module-name    = "oz_stemmer._oz_stemmer"
+python-source  = "python"
+features       = ["pyo3/extension-module"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
